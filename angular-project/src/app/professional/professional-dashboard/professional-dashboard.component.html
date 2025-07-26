@@ -1,0 +1,108 @@
+<div class="professional-dashboard">
+  <div class="dashboard-header">
+    <h1>Professional Dashboard</h1>
+    <p>Manage your professional projects and business operations</p>
+  </div>
+
+  <div class="stats-grid">
+    <mat-card *ngFor="let stat of professionalStats" class="stat-card">
+      <mat-card-content>
+        <div class="stat-content">
+          <div class="stat-info">
+            <h3>{{ stat.value }}</h3>
+            <p>{{ stat.title }}</p>
+          </div>
+          <div class="stat-icon">
+            <span class="material-icons">{{ stat.icon }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="dashboard-content">
+    <div class="content-section">
+      <mat-card class="projects-card">
+        <mat-card-header>
+          <mat-card-title>Recent Projects</mat-card-title>
+          <button mat-raised-button color="primary">New Project</button>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="projects-list">
+            <div *ngFor="let project of recentProjects" class="project-item">
+              <div class="project-info">
+                <h4>{{ project.name }}</h4>
+                <p>{{ project.client }}</p>
+                <div class="project-status">
+                  <span class="status-badge" [ngClass]="'status-' + project.status.toLowerCase().replace(' ', '-')">
+                    {{ project.status }}
+                  </span>
+                </div>
+              </div>
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" [style.width.%]="project.progress"></div>
+                </div>
+                <span class="progress-text">{{ project.progress }}%</span>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="content-section">
+      <mat-card class="tools-card">
+        <mat-card-header>
+          <mat-card-title>Professional Tools</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="tools-grid">
+            <div *ngFor="let tool of tools" class="tool-item">
+              <div class="tool-icon">
+                <span class="material-icons">{{ tool.icon }}</span>
+              </div>
+              <div class="tool-info">
+                <h4>{{ tool.name }}</h4>
+                <p>{{ tool.description }}</p>
+              </div>
+              <button mat-icon-button color="primary">
+                <span class="material-icons">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <h2>Quick Actions</h2>
+    <div class="actions-grid">
+      <button mat-raised-button color="primary" class="action-btn">
+        <span class="material-icons">add</span>
+        New Project
+      </button>
+      <button mat-raised-button color="accent" class="action-btn">
+        <span class="material-icons">schedule</span>
+        Time Tracker
+      </button>
+      <button mat-raised-button class="action-btn">
+        <span class="material-icons">receipt</span>
+        Create Invoice
+      </button>
+      <button mat-raised-button class="action-btn">
+        <span class="material-icons">analytics</span>
+        View Reports
+      </button>
+      <button mat-raised-button class="action-btn">
+        <span class="material-icons">people</span>
+        Manage Team
+      </button>
+      <button mat-raised-button class="action-btn">
+        <span class="material-icons">settings</span>
+        Settings
+      </button>
+    </div>
+  </div>
+</div>
