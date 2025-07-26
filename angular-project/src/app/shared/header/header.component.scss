@@ -1,0 +1,75 @@
+.header-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.logo-section {
+  .app-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.nav-section {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  
+  button {
+    &.active {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 8px;
+  }
+  
+  .logo-section .app-title {
+    font-size: 1.2rem;
+  }
+  
+  .nav-section {
+    gap: 4px;
+    
+    button {
+      padding: 0 8px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-section {
+    flex-wrap: wrap;
+    gap: 2px;
+    
+    button {
+      padding: 0 6px;
+      font-size: 0.8rem;
+      min-width: auto;
+    }
+  }
+}
