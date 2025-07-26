@@ -1,0 +1,89 @@
+<div class="user-dashboard">
+  <div class="dashboard-header">
+    <h1>User Dashboard</h1>
+    <p>Welcome back! Here's your activity overview</p>
+  </div>
+
+  <div class="stats-grid">
+    <mat-card *ngFor="let stat of userStats" class="stat-card">
+      <mat-card-content>
+        <div class="stat-content">
+          <div class="stat-info">
+            <h3>{{ stat.value }}</h3>
+            <p>{{ stat.title }}</p>
+          </div>
+          <div class="stat-icon">
+            <span class="material-icons">{{ stat.icon }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="dashboard-content">
+    <div class="content-section">
+      <mat-card class="profile-card">
+        <mat-card-header>
+          <mat-card-title>Profile Overview</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="profile-info">
+            <div class="avatar-section">
+              <div class="avatar-placeholder">
+                <span class="material-icons">person</span>
+              </div>
+              <button mat-raised-button color="primary">Update Photo</button>
+            </div>
+            <div class="info-section">
+              <h3>John Doe</h3>
+              <p>john.doe@example.com</p>
+              <p>Member since: January 2024</p>
+              <button mat-stroked-button color="accent">Edit Profile</button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="content-section">
+      <mat-card class="activity-card">
+        <mat-card-header>
+          <mat-card-title>Recent Activities</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="activity-list">
+            <div *ngFor="let activity of recentActivities" class="activity-item">
+              <div class="activity-dot"></div>
+              <div class="activity-content">
+                <p class="activity-action">{{ activity.action }}</p>
+                <span class="activity-time">{{ activity.time }}</span>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <h2>Quick Actions</h2>
+    <div class="actions-grid">
+      <button mat-raised-button color="primary" class="action-btn">
+        <span class="material-icons">edit</span>
+        Edit Profile
+      </button>
+      <button mat-raised-button color="accent" class="action-btn">
+        <span class="material-icons">settings</span>
+        Settings
+      </button>
+      <button mat-raised-button class="action-btn">
+        <span class="material-icons">help</span>
+        Help & Support
+      </button>
+      <button mat-raised-button class="action-btn">
+        <span class="material-icons">logout</span>
+        Sign Out
+      </button>
+    </div>
+  </div>
+</div>
