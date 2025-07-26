@@ -1,0 +1,262 @@
+.user-dashboard {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 30px;
+  text-align: center;
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.stat-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-info {
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3f51b5;
+    margin: 0 0 4px 0;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+  }
+}
+
+.stat-icon {
+  .material-icons {
+    font-size: 2.5rem;
+    color: #3f51b5;
+    opacity: 0.7;
+  }
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.content-section {
+  mat-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.profile-card {
+  .profile-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .avatar-section {
+    text-align: center;
+    
+    .avatar-placeholder {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      
+      .material-icons {
+        font-size: 2.5rem;
+        color: #666;
+      }
+    }
+    
+    button {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .info-section {
+    flex: 1;
+    
+    h3 {
+      font-size: 1.5rem;
+      margin: 0 0 8px 0;
+      color: #333;
+    }
+    
+    p {
+      margin: 4px 0;
+      color: #666;
+    }
+    
+    button {
+      margin-top: 15px;
+    }
+  }
+}
+
+.activity-card {
+  .activity-list {
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    .activity-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #3f51b5;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    
+    .activity-content {
+      .activity-action {
+        margin: 0 0 4px 0;
+        color: #333;
+        font-weight: 500;
+      }
+      
+      .activity-time {
+        font-size: 0.8rem;
+        color: #999;
+      }
+    }
+  }
+}
+
+.quick-actions {
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  
+  .material-icons {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-dashboard {
+    padding: 15px;
+  }
+  
+  .dashboard-header {
+    margin-bottom: 20px;
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-info {
+    flex-direction: column;
+    text-align: center;
+    
+    .info-section {
+      text-align: center;
+    }
+  }
+  
+  .actions-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .stat-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .stat-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .action-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
